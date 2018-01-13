@@ -23,6 +23,7 @@ add_executable(rtl_433
 	pulse_demod.c
 	pulse_detect.c
 	rtl_433.c
+	optparse.c
 	util.c
 	devices/acurite.c
 	devices/alecto.c
@@ -43,6 +44,7 @@ add_executable(rtl_433
 	devices/fineoffset.c
 	devices/fineoffset_wh1080.c
 	devices/ft004b.c
+	devices/ge_coloreffects.c
 	devices/generic_remote.c
 	devices/generic_temperature_sensor.c
 	devices/gt_wt_02.c
@@ -107,12 +109,13 @@ add_executable(rtl_433
 	devices/fordremote.c
 	devices/philips.c
 	devices/nexa.c
+	devices/thermopro_tp12.c
 )
 
 add_library(data data.c)
 
 target_link_libraries(rtl_433
-	${LIBRTLSDR_LIBRARIES}
+	${SDR_LIBRARIES}
     ${CMAKE_THREAD_LIBS_INIT}
 )
 
